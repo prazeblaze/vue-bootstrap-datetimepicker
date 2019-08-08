@@ -1,6 +1,6 @@
 <template>
   <div class="datetimepicker-inline" v-if="config.inline"></div>
-  <input type="text" class="form-control" v-else>
+  <input type="text" :class="inputClass" v-else>
 </template>
 
 <script>
@@ -26,6 +26,10 @@
       config: {
         type: Object,
         default: () => ({})
+      },
+      inputClass: {
+        type: String,
+        default: 'form-control'
       },
       /**
        * You can set this to true when component is wrapped in input-group
